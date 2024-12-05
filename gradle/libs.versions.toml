@@ -1,15 +1,22 @@
 [versions]
-agp = "8.6.0"
+agp = "8.6.1"
 glide = "4.11.0"
 kotlin = "1.9.0"
-coreKtx = "1.13.1"
+coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.3"
-constraintlayout = "2.1.4"
+constraintlayout = "2.2.0"
+mockitoAndroid = "3"
+mockitoCoreVersion = "4"
+mockitoMockitoCore = "5.14.0"
+mockk = "1.13.13"
+robolectric = "4.14"
+kotlinxCoroutinesCore = "1.7.0"
+kotlinxCoroutinesTest = "1.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -19,9 +26,19 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+junit-junit = { module = "junit:junit" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockitoAndroid" }
+mockito-core = { module = "org.mockito:mockito-core", version = "5.14.2" }
+mockito-core-v4 = { module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion" }
+mockito-core-v5140 = { module = "org.mockito:mockito-core", version.ref = "mockitoMockitoCore" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version = "5.4.0" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

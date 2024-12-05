@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.zyablik.pr7_8"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.zyablik.pr7_8"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -37,6 +37,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -46,9 +51,17 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation (libs.kotlinx.coroutines.core)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
+
 }

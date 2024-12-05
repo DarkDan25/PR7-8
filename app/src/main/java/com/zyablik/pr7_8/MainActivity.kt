@@ -41,11 +41,14 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             lifecycleScope.launch{
                 Log.d("pr", "Some thread ${Thread.currentThread().name}")
+                binding.txt.text = "Done"
+
                 val imageURL =
                     "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png"
                 image = downloadAndSaveImage(imageURL)
                 if (image != null) {
                     binding.imageView.setImageBitmap(image)
+
                     Log.d("rrr","Downloaded and saved")
                 } else {
                     Log.d("rrr","Failed to load")
