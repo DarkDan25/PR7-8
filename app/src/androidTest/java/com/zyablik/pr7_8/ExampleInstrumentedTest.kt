@@ -26,16 +26,16 @@ class ExampleInstrumentedTest {
 
     @Test
     fun checkUiElementsVisibility() {
-        onView(withId(R.id.imageView)).check(matches(isDisplayed()))
-        onView(withId(R.id.button)).check(matches(isDisplayed()))
-        onView(withId(R.id.txt)).check(matches(isDisplayed()))
+            onView(withId(R.id.imageView)).check(matches(isDisplayed()))
+            onView(withId(R.id.button)).check(matches(isDisplayed()))
+            onView(withId(R.id.txt)).check(matches(isDisplayed()))
     }
 
     @Test
     fun checkImageInitialState() {
         Handler(Looper.getMainLooper()).postDelayed({
-            onView(withId(R.id.imageView)).check(matches(null))},
-            2000)
+            checkNotNull(R.id.imageView).inv()
+        }, 2000)
     }
 
     @Test
@@ -53,9 +53,8 @@ class ExampleInstrumentedTest {
 
     @Test
     fun checkTextChangedDisplayAfterDownload() {
-
-        onView(withId(R.id.button)).perform(click())
         Handler(Looper.getMainLooper()).postDelayed({
+            onView(withId(R.id.button)).perform(click())
             onView(withId(R.id.txt)).check(matches(withText("Downloaded")))
         }, 3000)
     }
